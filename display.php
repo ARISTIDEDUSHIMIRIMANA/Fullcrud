@@ -11,7 +11,7 @@
 <body>
 
     <?php
-
+    include "connection.php";
     include "navbar.php";
     ?>
 
@@ -32,28 +32,45 @@
                     </th>
 
                     <th scope="col" class="px-6 py-3">
-                       Edit
+                        Edit
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        1
-                    </th>
+
+
+                <?php
+                $sql = "SELECT * FROM infomation";
+                $query = mysqli_query($conn, $sql);
+
+                while ($row = mysqli_fetch_assoc($query)) {
+ 
+                ?>
+
+                <tr class=" bg-black border-b-4 border-green-600">
                     <td>
-                        test@gmail.com
+                        <?php echo $row['id'] ?>
                     </td>
                     <td>
-                        0783456789 
+                    <?php echo $row['email'] ?>
                     </td>
 
                     <td>
-                        <a href="" class=" text-white bg-red-600 p-2  w-52">Delete</a>
-                        <a href="" class=" bg-blue-500  text-white p-2 w-52">Update</a>
+                    <?php echo $row['number'] ?>
                     </td>
-                   
+
+                    <td>
+                        <a href="">update</a>
+                        <a href="">delete</a>
+                    </td>
                 </tr>
+
+
+                <?php
+
+                }
+                ?>
+
 
 
             </tbody>
