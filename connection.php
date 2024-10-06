@@ -6,9 +6,9 @@ $db="collaboration";
 $conn=mysqli_connect($host,$user,$password,$db);
 
 if($conn){
-    echo "Databse connected";
+ 
 }else{
-    $conn->error;
+    // $conn->error;
 }
 
 
