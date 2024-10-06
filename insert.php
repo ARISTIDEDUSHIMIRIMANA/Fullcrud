@@ -46,10 +46,13 @@ if(isset($_POST['submit'])){
   $query=mysqli_query($conn,$sql);
 
   if($query){
-    echo "Data inserted";
+  
+    header("location:display.php");
+
   }else{
     echo $conn->error;
   }
+
 
 
 }

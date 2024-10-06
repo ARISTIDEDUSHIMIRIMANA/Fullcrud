@@ -13,6 +13,7 @@
     <?php
     include "connection.php";
     include "navbar.php";
+
     ?>
 
 
@@ -40,15 +41,17 @@
 
 
                 <?php
+                
                 $sql = "SELECT * FROM infomation";
                 $query = mysqli_query($conn, $sql);
 
                 while ($row = mysqli_fetch_assoc($query)) {
  
                 ?>
+                
 
-                <tr class=" bg-black border-b-4 border-green-600">
-                    <td>
+                <tr class="  ">
+                    <td >
                         <?php echo $row['id'] ?>
                     </td>
                     <td>
@@ -58,10 +61,10 @@
                     <td>
                     <?php echo $row['number'] ?>
                     </td>
-
+ 
                     <td>
-                        <a href="">update</a>
-                        <a href="">delete</a>
+                        <a href="update.php?id=<?php echo $row['id'] ?>" class=" bg-blue-600  w-52 text-white">update</a>
+                        <a href="delete.php?id=<?php echo $row['id']?>" class=" bg-red-500 text-white w-52 ">delete</a>
                     </td>
                 </tr>
 
